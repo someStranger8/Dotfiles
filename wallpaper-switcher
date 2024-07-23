@@ -1,0 +1,117 @@
+#!/bin/bash
+
+## Files
+CONFIG="$HOME/.config/wofi/config"
+STYLE="$HOME/.config/wofi/style.css"
+COLORS="$HOME/.config/wofi/colors"
+
+
+DIR=$HOME/Wallpapers/
+PICS=($(ls ${DIR}))
+
+RANDOMPICS=${PICS[ $RANDOM % ${#PICS[@]} ]}
+
+if [[ $(pidof swaybg) ]]; then
+  pkill swaybg
+fi
+
+## Wofi Command
+wofi_command="wofi --show dmenu \
+			--prompt 'choose..'
+			--conf ${CONFIG} --style ${STYLE} --color ${COLORS} \
+			--width=300 --height=400 \
+			--cache-file=/dev/null \
+			--hide-scroll --no-actions \
+			--define=matching=fuzzy"
+
+menu(){
+printf "1. Anime\n" 
+printf "2. Audio Bunny\n" 
+printf "3. Bass\n" 
+printf "4. Japan\n" 
+printf "5. Light House\n"
+printf "6. Miami\n"
+printf "7. Night Sky\n"
+printf "8. Paint\n"
+printf "9. Waifu\n"
+printf "10. random"
+}
+
+swww query || swww-daemon
+
+main() {
+choice=$(menu | ${wofi_command} | cut -d. -f1)
+case $choice in
+1)
+    hyprctl hyprpaper preload "~/Wallpapers/anime.jpg"
+    hyprctl hyprpaper wallpaper ",~/Wallpapers/anime.jpg"
+    wal -q -i "~/Wallpapers/anime.jpg"
+    return
+    ;;
+2)
+    hyprctl hyprpaper preload "~/Wallpapers/audio-bunny.png"
+    hyprctl hyprpaper wallpaper ",~/Wallpapers/audio-bunny.png"
+    wal -q -i "~/Wallpapers/audio-bunny.png"
+
+    return
+    ;;
+3)
+    hyprctl hyprpaper preload "~/Wallpapers/bass.jpg"
+    hyprctl hyprpaper wallpaper ",~/Wallpapers/bass.jpg"
+    wal -q -i "~/Wallpapers/bass.jpg"
+
+    return
+    ;;
+4)
+    hyprctl hyprpaper preload "~/Wallpapers/japan.png"
+    hyprctl hyprpaper wallpaper ",~/Wallpapers/japan.png"
+    wal -q -i "~/Wallpapers/japan.png"
+
+    return
+    ;;
+5)
+    hyprctl hyprpaper preload "~/Wallpapers/lighthouse.png"
+    hyprctl hyprpaper wallpaper ",~/Wallpapers/lighthouse.png"
+    wal -q -i "~/Wallpapers/lighthouse.png"
+
+    return
+    ;;
+6)
+    hyprctl hyprpaper preload "~/Wallpapers/miami.png"
+    hyprctl hyprpaper wallpaper ",~/Wallpapers/miami.png"
+    wal -q -i "~/Wallpapers/miami.png"
+
+    return
+    ;;
+7)
+    hyprctl hyprpaper preload "~/Wallpapers/nightsky.jpg"
+    hyprctl hyprpaper wallpaper ",~/Wallpapers/nightsky.jpg"
+    wal -q -i "~/Wallpapers/nightsky.jpg"
+
+    return
+    ;;
+8)
+    hyprctl hyprpaper preload "~/Wallpapers/paint.png"
+    hyprctl hyprpaper wallpaper ",~/Wallpapers/paint.png"
+    wal -q -i "~/Wallpapers/paint.png"
+
+    return
+    ;;
+9)
+    hyprctl hyprpaper preload "~/Wallpapers/waifu.jpg"
+    hyprctl hyprpaper wallpaper ",~/Wallpapers/waifu.jpg"
+    wal -q -i "~/Wallpapers/waifu.jpg"
+
+    return
+    ;;
+10)
+    hyprctl hyprpaper preload "${DIR}/${RANDOMPICS}"
+    hyprctl hyprpaper wallpaper ",${DIR}/${RANDOMPICS}"
+    wal -q -i "${DIR}/${RANDOMPICS}"
+
+    return
+    ;;
+esac
+}
+
+killall -f || main
