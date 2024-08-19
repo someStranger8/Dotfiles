@@ -63,11 +63,13 @@ main() {
     # random choice case
     if [ "$choice" = "$RANDOM_PIC_NAME" ]; then
         swww img ${DIR}/${RANDOM_PIC} $SWWW_PARAMS
+	wal -i ${DIR}/${RANDOM_PIC} -q
         return
     fi
     
     pic_index=$(echo $choice | cut -d. -f1)
     swww img ${DIR}/${PICS[$pic_index]} $SWWW_PARAMS
+    wal -i ${DIR}/${PICS[$pic_index]} -q
 }
 
 # Check if wofi is already running
