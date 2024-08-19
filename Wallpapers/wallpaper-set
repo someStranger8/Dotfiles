@@ -4,7 +4,7 @@ DIR='/home/somestranger8/Wallpapers'
 
 WALLPAPER=$(find "$DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.gif" \) | shuf -n 1)
 
-swww img $WALLPAPER --transition-duration 1.2 --transition-step 255 --transition-type outer --transition-pos 0,0
+swww img $WALLPAPER
 
 wal -i $WALLPAPER --saturate 0.7 -n -b 010101 -q &
 
