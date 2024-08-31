@@ -1,160 +1,118 @@
 {
-    "layer": "top",
-    "position": "top",
-    "spacing": 0,
-    "height": 34,
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-    ],
-    "modules-right": [
-        "battery",
-	"clock",
-        "custom/power"
-    ],
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "on-click-right": "fullscreen",
-        "icon-theme": "WhiteSur",
-        "icon-size": 25,
-        "tooltip-format": "{title}"
+  "layer": "top",
+    "height": 10,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["custom/playerctl"],
+    "modules-right": ["cava", "clock"],
+    "custom/arch": {
+      "format": "  ",
+      "on-click": "sh /home/knightfall/.config/hypr/scripts/exec_wofi application_launcher"
     },
     "hyprland/workspaces": {
-        "on-click": "activate",
-        "format": "{icon}",
-        "format-icons": {
-            "default": "",
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "active": "󱓻",
-            "urgent": "󱓻"
+      "format": "{icon}",
+      "on-click": "activate",
+      "all-outputs": true,
+      "persistent_workspaces" :{
+          "1": [],
+	 		    "2": [],
+	 		    "3": [],
+	 		    "4": [],
+	 		    "5": [],
+	 		    "6": [],
+	 		    "7": [],
+	 		    "8": [],
+	 		    "9": [],
+	 		    "10": []
         },
-        "persistent_workspaces": {
-		"1":["*"],
-		"2":["*"],
-		"3":["*"],
-		"4":["*"],
-		"5":["*"]
-	} 
-    },
-    "memory": {
-        "interval": 5,
-        "format": "󰍛 {}%",
-        "max-length": 10
-    },
-    "tray": {
-        "spacing": 10
+        "format-icons": {
+                "1": "1",
+             		"2": "2",
+             		"3": "3",
+             		"4": "4",
+             		"5": "5",
+          }
     },
     "clock": {
-        "tooltip": false,
-        "format-alt": "{:%a, %b %d %Y}",
-        "format": "{:%I:%M %p}"
+      "format": "<span color='#dbabdb'> </span>{:%H:%M}",
+  "format-alt": "<span foreground='#dbabdb'> </span><span>{:%I:%M %p %a %d}</span>",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "backlight": {
+      "device": "amdgpu_b10",
+      "format": "<span color='#94beec'>{icon}</span> {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "custom/sound": {
+      "format": "<span color='#5d7'> </span>{}",
+      "exec": "custom-alsa.sh",
     },
     "network": {
-        "format-wifi" : "{icon}",
-        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
-        "format-ethernet": "󰀂",
-	"format-alt" : "󱛇",
-        "format-disconnected" : "󰖪",
-	"tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-        "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-	"tooltip-format-disconnected": "Disconnected",
-	"on-click": "~/.config/rofi/wifi/wifi.sh &",
-        "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
-	"interval": 5,
-	"nospacing": 1,
-    },
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-bluetooth": "󰂰",
-        "nospacing": 1,
-        "tooltip-format": "Volume : {volume}%",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphone": "",
-            "default": ["󰖀","󰕾",""]
-        },
-        "on-click": "pamixer -t",
-        "scroll-step": 1
-    },
-    "custom/logo": {
-        "format": "  ",
-        "tooltip": false,
-        "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
-    },
-    "custom/discord":{
-    	"format":"  ",
-	"tooltip-format":"Discord",
-	"on-click":"vesktop"
-    },
-    "custom/firefox":{
-    	"format":" 󰈹 ",
-	"tooltip-format":"Firefox",
-	"on-click":"firefox"
-    },
-    "custom/spotify":{
-	"format":" ",
-	"tooltip-format":"Spotify",
-	"on-click":"spotify-launcher"
+      "interface": "wlan0",
+      "format": "{ifname}",
+      "format-wifi": "<span color='#8a8af8'> </span>{essid}({signalStrength}%)",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "format-disconnected": "<span color='#e80064'>󰖪 </span>No Network",
+      "on-click": "kitty nmtui"
     },
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": {
-            "charging": [
-                "󰢜",
-                "󰂆",
-                "󰂇",
-                "󰂈",
-                "󰢝",
-                "󰂉",
-                "󰢞",
-                "󰂊",
-                "󰂋",
-                "󰂅"
-            ],
-            "default": [
-                "󰁺",
-                "󰁻",
-                "󰁼",
-                "󰁽",
-                "󰁾",
-                "󰁿",
-                "󰂀",
-                "󰂁",
-                "󰂂",
-                "󰁹"
-            ]
-        },
-        "format-full": "Charged ",
-        "interval": 5,
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
-        "tooltip": false
+      "format": "<span color='#81dc98'>{icon}</span> {capacity}%",
+      "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+      "format-charging": "<span color='#81dc98'></span> {capacity}%"
     },
-    "custom/power": {
-        "format": "󰤆",
-        "tooltip": false,
-        "on-click": "wlogout"
+    "pulseaudio": {
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "format": "<span color='#6dd9d9'></span> {volume}%",
+      "format-muted": "<span color='#ff0000'>ﱝ</span>",
+      "format-icons": {
+       "headphone": "",
+       "hands-free": "",
+       "headset": "",
+       "phone": "",
+       "portable": "",
+       "car": "",
+       "default": ["奔", "墳"]
     },
-    "cava": {
+    "on-click-right" : "pavucontrol"
+    },
+    "memory": {
+    "format": "<span foreground='#8a8af8'></span> {}%",
+    "on-click": "kitty htop"
+    },
+    "tray": {
+    "icon-size": 20,
+    "reverse-direction": true,
+    "spacing": 6
+    },
+    "cpu": {
+    "format": "<span foreground='#7bc0b3'></span>  {usage}%"
+     },
+     "temperature": {
+    "critical-threshold": 80,
+    "format": "<span foreground='#5d73ca'></span> {temperatureC}°C"
+     },
+    "custom/playerctl": {
+     "format": "{icon}  <span>{}</span>",
+     "return-type": "json",
+     "max-length": 55,
+     "exec": "playerctl -a metadata --format '{\"text\": \"  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+     "on-click-middle": "playerctl previous",
+     "on-click": "playerctl play-pause",
+     "on-click-right": "playerctl next",
+     "format-icons": {
+       "Paused": "<span foreground='#6dd9d9'></span>",
+       "Playing": "<span foreground='#82db97'></span>"
+     }
+     },
+"cava": {
+//        "cava_config": "~/.config/cava/cava.conf",
         "framerate": 30,
         "autosens": 1,
         "sensitivity": 1,
+        "hide_on_silence":true,
         "bars": 14,
         "lower_cutoff_freq": 50,
         "higher_cutoff_freq": 10000,
-        "method": "pipewire",
+        "method": "pulse",
         "source": "auto",
         "stereo": true,
         "reverse": false,
@@ -165,7 +123,8 @@
         "input_delay": 2,
         "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
         "actions": {
-                   "on-click": "mode"
-	}
+                   "on-click-right": "mode"
+                   }
     },
+
 }

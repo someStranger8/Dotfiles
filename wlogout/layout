@@ -6,13 +6,13 @@
 }
 {
     "label" : "shutdown",
-    "action" : "sudo poweroff",
+    "action" : "systemctl shutdown",
     "text" : "Shutdown",
     "keybind" : "s"
 }
 {
     "label" : "reboot",
-    "action" : "sudo reboot",
+    "action" : "systemctl reboot",
     "text" : "Reboot",
     "keybind" : "r"
 }
