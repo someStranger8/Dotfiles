@@ -8,32 +8,19 @@
       "format": "  ",
       "on-click": "sh /home/knightfall/.config/hypr/scripts/exec_wofi application_launcher"
     },
+    "hyprland/window":{
+      "icon":true
+    },
     "hyprland/workspaces": {
       "format": "{icon}",
       "on-click": "activate",
       "all-outputs": true,
       "persistent_workspaces" :{
-          "1": [],
-	 		    "2": [],
-	 		    "3": [],
-	 		    "4": [],
-	 		    "5": [],
-	 		    "6": [],
-	 		    "7": [],
-	 		    "8": [],
-	 		    "9": [],
-	 		    "10": []
-        },
-        "format-icons": {
-                "1": "1",
-             		"2": "2",
-             		"3": "3",
-             		"4": "4",
-             		"5": "5",
-          }
+          "HDMI-A-1":[1, 2, 3, 4, 5]
+	 	  },
     },
     "clock": {
-      "format": "<span color='#dbabdb'> </span>{:%H:%M}",
+      "format": "<span color='#dbabdb'> </span>{:%I:%M %p}",
   "format-alt": "<span foreground='#dbabdb'> </span><span>{:%I:%M %p %a %d}</span>",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
@@ -122,9 +109,6 @@
         "noise_reduction": 0.77,
         "input_delay": 2,
         "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-        "actions": {
-                   "on-click-right": "mode"
-                   }
     },
 
 }

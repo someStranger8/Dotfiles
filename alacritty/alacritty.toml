@@ -1,3 +1,6 @@
+
+import = ["~/.cache/wal/colors-alacritty.toml"]
+
 [shell]
 program = "/usr/bin/fish"
 
