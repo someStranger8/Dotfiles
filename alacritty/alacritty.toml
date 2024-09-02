@@ -26,21 +26,3 @@ y = 10
 #columns = 90
 #lines = 25
 
-[colors.normal]
-black = "#21222c"
-red = "#ff5555"
-green = "#50fa7b"
-yellow = "#f1fa8c"
-blue = "#bd93f9"
-magenta = "#ff79c6"
-cyan = "#8be9fd"
-white = "#f8f8f2"
-
-[colors.primary]
-background = "#282a36"
-foreground = "#f8f8f2"
-
-[colors.cursor]
-text = "CellBackground"
-cursor = "CellForeground"
-
