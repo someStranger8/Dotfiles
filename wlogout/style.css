@@ -12,7 +12,7 @@ button {
     background-position: center;
     background-size: 20%;
     background-color: #0c0d15;
-    animation: gradient_f 20s ease-in infinite;
+    animation: 20s ease-in infinite;
     border-radius: 50px; /* Increased border radius for a more rounded look */
 }
 
@@ -27,8 +27,9 @@ button:hover {
     background-color:#7aa2f7;
     color: #7aa2f7;
     background-size: 40%;
-    border-radius: 60px; 
-    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.3s ease-in-out; 
+    border-radius: 60px;
+    border-color: #0c0d15;
+    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), 0.2s ease-in-out, background-color 0.3s ease-in-out; 
 	
 }
 

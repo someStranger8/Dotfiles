@@ -51,7 +51,8 @@ window#waybar.empty #window {
 #memory, 
 #custom-playerctl,
 #window,
-#cava {
+#cava,
+#custom-notification {
   border-radius: 10px;
   background-color: #0c0d15;
   color: #ede0f5;
