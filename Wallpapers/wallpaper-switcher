@@ -13,7 +13,7 @@ DURATION=1.25
 WIDTH=20
 HEIGHT=30
 
-SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
+SWWW_PARAMS="--transition-fps 60 --transition-type wipe --transition-duration 0.75"
 
 
 PICS=($(ls ${DIR} | grep -e ".jpg$" -e ".jpeg$" -e ".png$" -e ".gif$"))
@@ -30,12 +30,14 @@ if [[ $(pidof swaybg) ]]; then
 fi
 
 ## Wofi Command
-wofi_command="rofi -theme /home/somestranger8/.config/rofi/launchers/type-1/style-5.rasi -dmenu \
-			-prompt choose...
-			-width=$WIDTH% --height=$HEIGHT% \
-			-cache-file=/dev/null \
-			-hide-scroll --no-actions \
-			-matching=fuzzy"
+#wofi_command="rofi -theme /home/somestranger8/.config/rofi/launchers/type-1/style-5.rasi -dmenu \
+#			-prompt choose...
+#			-width=$WIDTH% --height=$HEIGHT% \
+#			-cache-file=/dev/null \
+#			-hide-scroll --no-actions \
+#     -matching=fuzzy"
+
+wofi_command="tofi "
 
 menu(){
     # Here we are looping in the PICS array that is composed of all images in the $DIR
@@ -62,14 +64,14 @@ main() {
 
     # random choice case
     if [ "$choice" = "$RANDOM_PIC_NAME" ]; then
-        swww img ${DIR}/${RANDOM_PIC} $SWWW_PARAMS
+        swww img ${DIR}/${RANDOM_PIC} --transition-fps 60 --transition-type wipe --transition-duration 1.25 
 	wal -i ${DIR}/${RANDOM_PIC} -q
 	notify-send -i ${DIR}/${RANDOM_PIC} "New Wallpaper" &
         return
     fi
     
     pic_index=$(echo $choice | cut -d. -f1)
-    swww img ${DIR}/${PICS[$pic_index]} $SWWW_PARAMS
+    swww img ${DIR}/${PICS[$pic_index]} --transition-fps 60 --transition-type wipe --transition-duration 1.25 
     wal -i ${DIR}/${PICS[$pic_index]} -q
     notify-send -i ${DIR}/${PICS[$pic_index]} "New Wallpaper" &
 }
