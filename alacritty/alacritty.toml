@@ -8,7 +8,7 @@ program = "/usr/bin/fish"
 style = "Beam"
 
 [font]
-size = 15.0
+size = 16.5
 
 [font.normal]
 family = "Hack Nerd Font Mono"

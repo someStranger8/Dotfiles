@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $2 == "Shutdown" ]; then
+  systemctl poweroff
+fi
+
+if [ $2 == "Reboot" ]; then
+  systemctl reboot
+fi
+
+if [ $2 == "Log" ]; then
+  hyprctl dispatch exit 0
+fi
+
+if [ $2 == "Lock" ]; then
+  hyprlock
+fi
