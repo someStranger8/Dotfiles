@@ -5,4 +5,5 @@ function fish_greeting
 end
 
 alias nv "nvim"
-alias v "nvim"
+alias v "vim"
+alias mi "micro"
