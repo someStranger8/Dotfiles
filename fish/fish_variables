@@ -1,9 +1,27 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
+SETUVAR background:\x230B0B0D
+SETUVAR color0:\x230B0B0D
+SETUVAR color1:\x237E8181
+SETUVAR color10:\x237B8489
+SETUVAR color11:\x238D9197
+SETUVAR color12:\x23AEB0B5
+SETUVAR color13:\x23BCBDC2
+SETUVAR color14:\x23BEC4C4
+SETUVAR color15:\x23e0e2e1
+SETUVAR color2:\x237B8489
+SETUVAR color3:\x238D9197
+SETUVAR color4:\x23AEB0B5
+SETUVAR color5:\x23BCBDC2
+SETUVAR color6:\x23BEC4C4
+SETUVAR color7:\x23e0e2e1
+SETUVAR color8:\x239c9e9d
+SETUVAR color9:\x237E8181
+SETUVAR cursor:\x237E8181
 SETUVAR fish_color_autosuggestion:65525c
 SETUVAR fish_color_cancel:\x2dr
-SETUVAR fish_color_command:9096DB
+SETUVAR fish_color_command:7E8181
 SETUVAR fish_color_comment:CB90B3
 SETUVAR fish_color_cwd:AE9AD5
 SETUVAR fish_color_cwd_root:red
@@ -27,10 +45,10 @@ SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_operator:7F95E0
 SETUVAR fish_color_option:\x1d
-SETUVAR fish_color_param:9096DB
+SETUVAR fish_color_param:BCBDC2
 SETUVAR fish_color_quote:CB90B3
 SETUVAR fish_color_redirection:9096DB
-SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:normal
 SETUVAR fish_color_user:AE9AD5
@@ -38,10 +56,10 @@ SETUVAR fish_color_valid_path:\x2d\x2dunderline
 SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell\x0aType\x20\x60help\x60\x20for\x20instructions\x20on\x20how\x20to\x20use\x20fish
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_background:\x1d
-SETUVAR fish_pager_color_completion:c0c0c0\x1e\x2d\x2dbackground\x3d060405
+SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:CB90B3\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
-SETUVAR fish_pager_color_progress:CD9DCF\x1e\x2d\x2dbackground\x3d060405
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_secondary_background:\x1d
 SETUVAR fish_pager_color_secondary_completion:\x1d
 SETUVAR fish_pager_color_secondary_description:\x1d
@@ -50,3 +68,5 @@ SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
+SETUVAR foreground:\x23e0e2e1
+SETUVAR wallpaper:/home/somestranger8/Wallpapers/samuri\x2ejpg

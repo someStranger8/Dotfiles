@@ -2,7 +2,7 @@
     monitor = 0
     follow = none
     width = 300
-    height = 145
+    height = (0, 145)
     origin = top-right
     alignment = "left"
     vertical_alignment = "center"
@@ -33,7 +33,7 @@
     show_age_threshold = 60 
     markup = "full" 
     font = "monospace 10" 
-    format = "<b>%s</b>\n%b:
+    format = "<b>%s</b>\n%b"
     word_wrap = "yes" 
     sort = "yes" 
     shrink = "no" 
