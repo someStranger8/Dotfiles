@@ -7,12 +7,12 @@ padding-top = 33%
 result-spacing = 25
 num-results = 5
 
-font = JetBrainsMono Nerd Font
+font = Hack Nerd Font
 font-size = 24
 
-text-color = #a9b1d6
+text-color = #FFFFFF
 
 prompt-text = "> "
 
-background-color = #0c0d15cc
-selection-color = #7aa2f7
+background-color = #212121A6
+selection-color = #FFFFFF
