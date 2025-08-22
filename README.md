@@ -1,9 +1,8 @@
 
 #  My Dotfiles
 
-This is my Hyprland rice
+![Arch](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
 
 ![Screenshot](Screenshots/screenshot1.png)
 ![Screenshot](Screenshots/screenshot2.png)
 ![Screenshot](Screenshots/screenshot3.png)
-![Screenshot](Screenshots/screenshot4.png)

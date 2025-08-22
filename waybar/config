@@ -2,16 +2,18 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar at the bottom of your screen
     "height": 5, // Waybar height
+    "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["custom/spotify"],
-    "modules-right": ["tray", "clock"],
+    "modules-right": ["cava", "clock"],
     "hypr/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
         "format": "{icon}",
     },
     "hyprland/window":{
-      "icon":true
+      "icon":true,
+      "tooltip":false
     },
     "tray": {
         // "icon-size": 21,
@@ -38,9 +40,22 @@
         },
         "on-click": "pavucontrol"
     },
+    "cava":{
+      "framerate": 30,
+      "autosens": 1,
+      "sensitivity": 1,
+      "bars": 12,
+      "bar_delimiter": 0,
+      "hide_on_silence": false,
+      "sleep_timer": 1,
+      "method": "pipewire",
+      "source": "auto",
+      "stereo": true,
+      "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    },
     "custom/spotify": {
       "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
-      "format": " {}",
+      "format": "{} ",
       "return-type": "json",
       "on-click": "playerctl play-pause",
       "on-scroll-up": "playerctl next",
