@@ -10,7 +10,7 @@ num-results = 5
 font = Hack Nerd Font
 font-size = 24
 
-text-color = #FFFFFF
+text-color = #FFFFFFA6
 
 prompt-text = "> "
 
