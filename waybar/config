@@ -43,7 +43,7 @@
     "cava":{
       "framerate": 30,
       "autosens": 1,
-      "sensitivity": 1,
+      "sensitivity": 0.8,
       "bars": 12,
       "bar_delimiter": 0,
       "hide_on_silence": false,
@@ -55,7 +55,7 @@
     },
     "custom/spotify": {
       "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
-      "format": "{} ",
+      "format": " {}",
       "return-type": "json",
       "on-click": "playerctl play-pause",
       "on-scroll-up": "playerctl next",
