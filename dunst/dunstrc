@@ -28,7 +28,7 @@
     gap_size = 8 
     line_height = 0 
     notification_limit = 0 
-    idle_threshold = 120 
+    idle_threshold = 0 
     history_length = 20 
     show_age_threshold = 60 
     markup = "full" 
@@ -58,16 +58,16 @@
     background = "#212121A6"
     foreground = "#FFFFFF"
     highlight = "#FFFFFF"
-    timeout = 4
+    timeout = 5
 
 [urgency_normal]
     background = "#212121A6"
     foreground = "#FFFFFF"
     highlight = "#FFFFFF"
-    timeout = 6
+    timeout = 5
 
 [urgency_critical]
     background = "#212121A6"
     foreground = "#FFFFFF"
     highlight = "#FFFFFF"
-    timeout = 0
+    timeout = 5
