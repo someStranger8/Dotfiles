@@ -26,9 +26,9 @@ set -U color14 '{color14}'
 set -U color15 '{color15}'
 
 # Shell colors
-set -U fish_color_normal normal
-set -U fish_color_command {color1.strip}
-set -U fish_color_param {color5.strip}
+set -U fish_color_normal '{color1}'
+set -U fish_color_command '{color1}'
+set -U fish_color_param '{color5}'
 set -U fish_pager_color_completion
 set -U fish_pager_color_description $fish_color_quote yellow
 set -U fish_pager_color_progress brwhite --background=cyan

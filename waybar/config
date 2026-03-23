@@ -5,7 +5,7 @@
     "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["custom/spotify"],
-    "modules-right": ["cava", "clock"],
+    "modules-right": ["cava", "custom/weather", "clock"],
     "hypr/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
@@ -60,5 +60,13 @@
       "on-click": "playerctl play-pause",
       "on-scroll-up": "playerctl next",
       "on-scroll-down": "playerctl previous"
+    },
+    "custom/weather": {
+    "format": "{}",
+    "tooltip": false,
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/weather/get_weather.rb",
+    "on-click": "~/.config/waybar/scripts/weather/get_weather.rb --next", // Cycle views
+    "interval": 900 // Every 15 minutes
     },
 }

@@ -61,7 +61,7 @@ window#taskbar.empty #window {
     border-bottom: 1px solid white;
 }
 
-#cava, #clock, #pulseaudio, #custom-spotify, #tray {
+#cava, #clock, #pulseaudio, #custom-spotify, #custom-weather, #tray {
     border-radius: 10px;
     background-color: rgba(33, 33, 33, 0.65);
     color: white;

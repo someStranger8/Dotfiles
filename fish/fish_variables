@@ -19,10 +19,10 @@ SETUVAR color7:\x23c6c2c6
 SETUVAR color8:\x23705c70
 SETUVAR color9:\x23783FA1
 SETUVAR cursor:\x23783FA1
-SETUVAR fish_color_command:783FA1
+SETUVAR fish_color_command:\x23783FA1
 SETUVAR fish_color_history_current:\x2d\x2dbold
-SETUVAR fish_color_normal:normal
-SETUVAR fish_color_param:DF6BAC
+SETUVAR fish_color_normal:\x23783FA1
+SETUVAR fish_color_param:\x23DF6BAC
 SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:CB90B3\x1eyellow
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan

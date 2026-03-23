@@ -1,6 +1,8 @@
 
 
 function fish_greeting
+  set --erase --global fish_color_command
+  set --erase --global fish_color_param
 	source ~/.cache/wal/colors.fish
 end
 
