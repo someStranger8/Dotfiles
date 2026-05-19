@@ -5,10 +5,12 @@
     "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["custom/spotify"],
-    "modules-right": ["cava", "custom/weather", "clock"],
+    "modules-right": ["custom/weather", "clock"],
     "hypr/workspaces": {
         "disable-scroll": true,
+        "disable-click": false,
         "all-outputs": false,
+        "on-click": "activate",
         "format": "{icon}",
     },
     "hyprland/window":{
@@ -43,10 +45,12 @@
     "cava":{
       "framerate": 30,
       "autosens": 1,
-      "sensitivity": 0.8,
+      "sensitivity": 1,
       "bars": 12,
       "bar_delimiter": 0,
       "hide_on_silence": false,
+      "higher_cutoff_freq": 15000,
+      "lower_cutoff_freq": 0,
       "sleep_timer": 1,
       "method": "pipewire",
       "source": "auto",

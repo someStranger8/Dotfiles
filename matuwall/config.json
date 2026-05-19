@@ -16,14 +16,14 @@
     "matugen_type": "scheme-tonal-spot"
   },
   "wall": {
-    "wall_mode_only": false,
-    "wall_awww_flags": "--transition-type center --transition-step 90 --transition-fps 60 --transition-duration 2"
+    "wall_mode_only": true,
+    "wall_awww_flags": "--transition-type center --transition-duration 0.5"
   },
   "theme": {
     "window_bg": "rgba(15, 18, 22, 0.58)",
     "text_color": "#e7e7e7",
-    "header_bg_start": "rgba(20, 25, 34, 0.58)",
-    "header_bg_end": "rgba(20, 25, 34, 0.78)",
+    "header_bg_start": "rgba(33, 33, 33, 0.65)",
+    "header_bg_end": "rgba(33, 33, 33, 0.65)",
     "backdrop_bg": "rgba(0, 0, 0, 0.0)",
     "card_bg": "rgba(255, 255, 255, 0.04)",
     "card_border": "rgba(255, 255, 255, 0.05)",
@@ -39,7 +39,7 @@
   },
   "panel": {
     "panel_mode": false,
-    "panel_edge": "left",
+    "panel_edge": "top",
     "panel_thumbs_col": 5,
     "panel_exclusive_zone": -1,
     "panel_margin_top": 0,
