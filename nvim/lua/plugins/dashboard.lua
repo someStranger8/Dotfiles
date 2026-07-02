@@ -8,8 +8,29 @@ return {
       config = {
         center = {
           {
-            desc = "Low-level programming is good for the programmer\'s soul.",
-          }
+            icon = "󰈞 ",
+            desc = "Find Files",
+            key = "f",
+            keyformat = "[%s]",
+            action = "Telescope"
+          },
+          {
+            icon = "󰒲 ",
+            desc = "Open Lazy.nvim Menu",
+            key = "l",
+            keyformat = "[%s]",
+            action = "Lazy"
+          },
+          {
+            icon = " ",
+            desc = "Open Mason.nvim Menu",
+            key = "m",
+            keyformat = "[%s]",
+            action = "Mason"
+          },
+        },
+        footer = {
+          "Low-level programming is good for the programmer\'s soul.",
         }
       }
     }

@@ -3,7 +3,15 @@
   dependencies = { "rafamadriz/friendly-snippets" },
   version = "1.*",
   opts = {
-    keymap = { preset = "default" },
+    keymap = {
+      preset = "default",
+      ["<Tab>"] = { "select_prev", "fallback" },
+      ["<S-Tab>"] = { "select_next", "fallback" },
+      ["<Cr>"] = { "accept", "fallback" },
+      ["<Right>"] = { "accept", "fallback"},
+      ["<Left>"] = { "cancel", "fallback" },
+      ["Esc"] = { "cancel", "fallback" }
+    },
     appearance = {
       nerd_font_variant = "mono"
     },
