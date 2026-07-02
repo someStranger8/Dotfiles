@@ -1,20 +1,14 @@
-return {
-  "neovim/nvim-lspconfig",
-  dependencies = { "saghen/blink.cmp" },
-  opts = {
-    servers = {
-      lua_ls = {}
-    }
-  },
-  config = function(_, opts)
-    for server, config in pairs(opts.servers) do
-      config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-      vim.lsp.config("server", config)
-    end
-  end,
 
+return {
+  "mason-org/mason-lspconfig.nvim", 
+  dependencies = { 
+    { "saghen/blink.cmp" },
+    { "mason-org/mason.nvim" },
+    {"neovim/nvim-lspconfig"},
+  },
   config = function()
-    local capabilities = require("blink.cmp").get_lsp_capabilities()
-    vim.lsp.config("lua_ls", { capabilities = capabilities })
-  end
+    require("mason-lspconfig").setup {
+      automatic_enable = { "harper_ls", "pyright" }
+    }
+  end,
 }
