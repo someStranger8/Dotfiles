@@ -1,5 +1,5 @@
 [global]
-    monitor = 0
+    monitor = 1
     follow = none
     width = 300
     height = (0, 145)
@@ -32,13 +32,13 @@
     history_length = 20 
     show_age_threshold = 60 
     markup = "full" 
-    font = "monospace 10" 
+    font = "Jetbrains Mono Nerd Font 10" 
     format = "<b>%s</b>\n%b"
     word_wrap = "yes" 
     sort = "yes" 
     shrink = "no" 
     indicate_hidden = "yes" 
-    sticky_history = "yes" 
+    sticky_history = false 
     ignore_newline = "no" 
     show_indicators = "no" 
     stack_duplicates = true 

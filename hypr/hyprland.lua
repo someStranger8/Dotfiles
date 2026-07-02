@@ -6,6 +6,13 @@ hl.monitor({
     scale    = "auto",
 })
 
+hl.monitor({
+  output = "HDMI-A-1",
+  mode = "1680x1050",
+  position = "1680x0",
+  scale = 1,
+})
+
 hl.on("hyprland.start", function () 
   hl.exec_cmd("uwsm app -- dunst")
 --hl.exec_cmd("uwsm app -- waybar")
@@ -54,6 +61,7 @@ hl.config({
         blur = {
             enabled   = true,
             size      = 3,
+            ignore_opacity = true,
             passes    = 1,
             vibrancy  = 0.1696,
         },
@@ -62,10 +70,16 @@ hl.config({
     animations = {
         enabled = true,
     },
+
+    input =  {
+        kb_layout = "us,us",
+	      kb_variant = ",dvorak",
+        kb_options = "grp:win_space_toggle",
+    },
 })
 
 
-hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+hl.curve("easy",{ type = "bezier", points = {{.53, .2}, {.55, .92}}})
 
 hl.animation({ leaf = "border",        enabled = true,  speed = 6, bezier = "default" })
 hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 6, spring = "default", style= "popin 80%"})
@@ -125,12 +139,14 @@ local mainMod = "ALT" -- Sets "Windows" key as main modifier
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("alacritty"))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exit())
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("hyprctl reload"))
 hl.bind(mainMod .. " + W", hl.dsp.window.close())
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("tofi-drun --drun-launch=true"))
 hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.exec_cmd("matuwall"))
 hl.bind(mainMod .. " + CTRL + SPACE", hl.dsp.exec_cmd("wallpaper-set"))
 hl.bind(mainMod .. " + CTRL + SHIFT + SPACE", hl.dsp.exec_cmd("cat ~/.local/share/scripts/powermenu | tofi | xargs ~/.config/scripts/powermenu --"))
 hl.bind(mainMod .. "+ Home", hl.dsp.exec_cmd("hyprshot -m output"))
+hl.bind("SUPER + Shift_R", hl.dsp.exec_cmd("hyprctl switchxkblayout current next"))
 
 
 -- Move focus with mainMod + arrow keys
@@ -168,7 +184,6 @@ hl.bind(mainMod .. " + S", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen({mode = "maximized", action="toggle"}))
 hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + SHIFT + TAB",   hl.dsp.focus({ workspace = "e-1" }))
---hl.bind("SUPER + Tab", hl.dsp.layout("cyclenext"))
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
@@ -183,18 +198,30 @@ local suppressMaximizeRule = hl.window_rule({
     suppress_event = "maximize",
 })
 
-hl.workspace_rule({workspace = "1", persistent = true})
-hl.workspace_rule({workspace = "2", persistent = true})
-hl.workspace_rule({workspace = "3", persistent = true})
-hl.workspace_rule({workspace = "4", persistent = true})
-hl.workspace_rule({workspace = "5", persistent = true})
+-- main monitor
+hl.workspace_rule({workspace = 1, persistent = true, monitor = "DP-1", default = 1})
+hl.workspace_rule({workspace = 2, persistent = true, monitor = "DP-1"})
+hl.workspace_rule({workspace = 3, persistent = true, monitor = "DP-1"})
+hl.workspace_rule({workspace = 4, persistent = true, monitor = "DP-1"})
+hl.workspace_rule({workspace = 5, persistent = true, monitor = "DP-1"})
+
+-- extra monitor
+hl.workspace_rule({workspace = 4, persistent = true, monitor = "HDMI-A-1"})
+hl.workspace_rule({workspace = 5, persistent = true, monitor = "HDMI-A-1"})
 
 hl.window_rule({
     name  = "pseudotile all",
-    
     match = { class = ".*" },
     pseudo = 1
 })
+
+--[[
+hl.window_rule({
+    name  = "float all",
+    match = { class = ".*" },
+    float = 1
+})
+--]]
 
 hl.window_rule({
   name = "persistent size",
@@ -208,4 +235,11 @@ hl.window_rule({
 
   match = {focus = 0},
   border_size = 0,
+})
+
+hl.layer_rule({
+  name = "waybar no blur",
+
+  match = {class = "^(waybar)$"},
+  blur = false,
 })

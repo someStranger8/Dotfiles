@@ -9,7 +9,7 @@ style = "Beam"
 size = 16.5
 
 [font.normal]
-family = "Hack Nerd Font Mono"
+family = "Jetbrains Mono Nerd Font"
 
 [window]
 startup_mode = "Windowed"
@@ -19,7 +19,7 @@ blur = true
 
 [window.padding]
 x = 10
-y = 10
+y = 7
 
 [general]
 

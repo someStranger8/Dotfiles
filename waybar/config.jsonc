@@ -6,12 +6,17 @@
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["custom/spotify"],
     "modules-right": ["custom/weather", "clock"],
-    "hypr/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "disable-click": false,
         "all-outputs": false,
-        "on-click": "activate",
+        "on-click": "hyprctl dispatch workspace {name}",
         "format": "{icon}",
+        "format-icons": {
+          "A":"4",
+          "B":"5"
+        }
+        
     },
     "hyprland/window":{
       "icon":true,

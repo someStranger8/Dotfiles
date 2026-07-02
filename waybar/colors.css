@@ -1,0 +1,96 @@
+@import url("../../.cache/wal/colors-waybar.css");
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Jetbrains Mono Nerd Font";
+    font-size: 23px;
+    min-height: 0;
+}
+
+tooltip {
+  border-radius: 10px;
+  background-color: alpha(@background, 0.65);
+  color: white;
+  margin-top: 15px;
+}
+
+#window, #workspaces {
+    border-radius: 10px;
+    background-color: alpha(@background, 0.65);
+    color: @foreground;
+    margin-top: 15px;
+	  margin-right: 8px;
+    margin-left: 8px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+window#waybar {
+    background: transparent;
+    color: @foreground;
+}
+
+window#waybar.empty #window {
+	background: transparent;
+}
+
+window#taskbar.empty #window {
+	background: transparent;
+}
+
+#window {
+    font-weight: bold;
+}
+/*
+#workspaces {
+    padding: 0 5px;
+}
+*/
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: @foreground;
+    border-top: 2px solid transparent;
+}
+
+#workspaces button.active {
+    color: @foreground;
+    border-bottom: 1px solid @color10;
+}
+
+#cava, #clock, #pulseaudio, #custom-spotify, #custom-weather, #tray {
+    border-radius: 10px;
+    background-color: alpha(@background, 0.65);
+    color: @foreground;
+    margin-top: 15px;
+	  margin-right: 8px;
+    margin-left: 8px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#custom-spotify {
+    color: @foreground;
+}
+
+#tray {
+}
+

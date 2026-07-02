@@ -29,3 +29,4 @@ end
 alias nv "nvim"
 alias v "vim"
 alias mi "micro"
+alias la "ls -a"
